@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="Appointment Form">
+        <div class="custom-padding custom-margin">
+            <!-- Contact Lookup Field -->
+            <lightning-record-edit-form object-api-name="Appointment_Details__c">
+                <lightning-input-field field-name="Contact__c" onchange={handleContactChange}></lightning-input-field>
+            </lightning-record-edit-form>
+
+            <!-- Subject Field -->
+            <lightning-input
+                label="Subject"
+                value={subject}
+                onchange={handleSubjectChange}
+                required>
+            </lightning-input>
+
+            <!-- Appointment Date Field -->
+            <lightning-input
+                label="Appointment Date"
+                type="date"
+                value={appointmentDate}
+                onchange={handleDateChange}
+                required>
+            </lightning-input>
+
+            <!-- Appointment Time Field -->
+            <lightning-input
+                label="Appointment Time"
+                type="time"
+                value={appointmentTime}
+                onchange={handleTimeChange}
+                required>
+            </lightning-input>
+
+            <!-- Description Field -->
+            <lightning-textarea
+                label="Description"
+                value={description}
+                onchange={handleDescriptionChange}
+                required>
+            </lightning-textarea>
+
+            <!-- Submit Button -->
+            <lightning-button
+                label="Submit"
+                onclick={handleSubmit}
+                class="custom-margin-top"
+                variant="brand">
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>
